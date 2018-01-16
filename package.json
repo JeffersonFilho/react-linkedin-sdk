@@ -1,0 +1,25 @@
+{
+  "name": "react-linkedin-sdk",
+  "version": "1.0.1",
+  "description": "React Linkedin SDK",
+  "main": "dist/react-lindekin-sdk.js",
+  "repository": "https://github.com/JeffersonFilho/react-linkedin-sdk",
+  "author": "Jefferson Filho",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel demo/index.html",
+    "build": "parcel build src/index.html -d dist/"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.4.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "prop-types": "^15.6.0"
+  }
+}
