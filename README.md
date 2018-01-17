@@ -30,6 +30,7 @@ ReactDOM.render(
     fields=":(id,num-connections,picture-url)"
     className={'linkedin_button'}
     textButton={'Login with Linkedin'}
+    buttonType: {'button'}
   />,
   document.getElementById('demo')
 )
@@ -58,6 +59,8 @@ class MyComponent extends React.Component {
         fields=":(id,num-connections,picture-urls::(original))"
         className={'linkedin_button'}
         textButton={'Login with Linkedin'}
+        buttonType: {'button'}
+
       />
     )
   }
@@ -74,4 +77,5 @@ export default MyComponent
 |   fields   |  string  |      Required       |
 |  callback  | function |      Required       |
 | textButton |  string  | Login with Linkedin |
+| buttonType |  string  |       button        |
 | className  |  string  |        none         |

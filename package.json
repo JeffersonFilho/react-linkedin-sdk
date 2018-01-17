@@ -1,6 +1,6 @@
 {
   "name": "react-linkedin-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React Linkedin SDK",
   "main": "build/index.js",
   "repository": "https://github.com/JeffersonFilho/react-linkedin-sdk",
