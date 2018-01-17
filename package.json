@@ -9,6 +9,18 @@
   "scripts": {
     "build": "webpack"
   },
+  "keywords": [
+    "sdk",
+    "auth",
+    "oauth",
+    "linkedin",
+    "react",
+    "reactjs",
+    "login",
+    "button",
+    "react-component",
+    "react-linkedin"
+  ],
   "dependencies": {
     "react": "^16.2.0",
     "webpack": "^3.10.0"
@@ -22,6 +34,8 @@
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "prop-types": "^15.6.0"
+    "css-loader": "^0.28.8",
+    "prop-types": "^15.6.0",
+    "style-loader": "^0.19.1"
   }
 }

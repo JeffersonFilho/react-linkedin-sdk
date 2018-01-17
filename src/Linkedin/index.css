@@ -1,0 +1,13 @@
+.linkedin-sdk {
+  border: none;
+  background: #0174b3;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.linkedin-sdk:disabled {
+  background: #59839a;
+  cursor: not-allowed;
+}

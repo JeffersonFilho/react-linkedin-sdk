@@ -1,17 +1,25 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import './index.css'
 
-export class LinkedInLogin extends Component {
+export class LinkedinSDK extends Component {
   static propTypes = {
     clientId: PropTypes.string.isRequired,
     callBack: PropTypes.func.isRequired,
     fields: PropTypes.string.isRequired,
     className: PropTypes.string,
-    textButton: PropTypes.string
+    textButton: PropTypes.string,
+    buttonType: PropTypes.string
+  }
+
+  state = {
+    loading: false
   }
 
   static defaultProps = {
-    textButton: 'Login with Linkedin'
+    textButton: 'Login with Linkedin',
+    buttonType: 'button',
+    className: 'linkedin-sdk'
   }
 
   componentDidMount() {
@@ -38,23 +46,29 @@ export class LinkedInLogin extends Component {
   callBack = () => {
     const { fields } = this.props
     window.IN.API.Raw(`/people/~${fields}`).result(r => {
+      this.setState({ loading: false })
       this.props.callBack(r)
     })
   }
 
   authorize = e => {
+    this.setState({ loading: true })
     window.IN.User.authorize(this.callBack, '')
   }
 
   render() {
-    const { textButton, className } = this.props
+    const { textButton, className, buttonType } = this.props
+    const { loading } = this.state
     return (
-      <div>
-        <button onClick={this.authorize} className={className}>
-          {textButton}
-        </button>
-      </div>
+      <button
+        onClick={this.authorize}
+        type={buttonType}
+        className={className}
+        disabled={loading}
+      >
+        {textButton}
+      </button>
     )
   }
 }
-export default LinkedInLogin
+export default LinkedinSDK

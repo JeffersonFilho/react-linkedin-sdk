@@ -1,4 +1,6 @@
 var path = require('path')
+var webpack = require('webpack')
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -18,10 +20,24 @@ module.exports = {
             presets: ['env', 'react', 'stage-0']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
   externals: {
     react: 'commonjs react'
-  }
+  },
+
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin()
+  ]
 }

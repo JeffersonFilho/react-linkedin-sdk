@@ -1,3 +1,3 @@
-import LinkedInLogin from './LinkedIn'
+import LinkedinSDK from './Linkedin'
 
-export default LinkedInLogin
+export default LinkedinSDK
