@@ -28,9 +28,10 @@ ReactDOM.render(
     clientId="123456789010"
     callBack={responseLinkedin}
     fields=":(id,num-connections,picture-url)"
-    className={'linkedin_button'}
+    className={'className'}
     textButton={'Login with Linkedin'}
-    buttonType: {'button'}
+    buttonType={'button'}
+    icon={<Icon />}
   />,
   document.getElementById('demo')
 )
@@ -57,10 +58,10 @@ class MyComponent extends React.Component {
         clientId="123456789010"
         callBack={responseLinkedin}
         fields=":(id,num-connections,picture-urls::(original))"
-        className={'linkedin_button'}
+        className={'className'}
         textButton={'Login with Linkedin'}
-        buttonType: {'button'}
-
+        buttonType={'button'}
+        icon={<Icon />}
       />
     )
   }
@@ -76,6 +77,7 @@ export default MyComponent
 |  clientId  |  string  |      Required       |
 |   fields   |  string  |      Required       |
 |  callback  | function |      Required       |
+| className  |  string  |        none         |
 | textButton |  string  | Login with Linkedin |
 | buttonType |  string  |       button        |
-| className  |  string  |        none         |
+|    icon    |  string  |        none         |

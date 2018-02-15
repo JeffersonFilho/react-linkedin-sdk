@@ -9,7 +9,8 @@ export class LinkedinSDK extends Component {
     fields: PropTypes.string.isRequired,
     className: PropTypes.string,
     textButton: PropTypes.string,
-    buttonType: PropTypes.string
+    buttonType: PropTypes.string,
+    icon: PropTypes.object
   }
 
   state = {
@@ -57,7 +58,7 @@ export class LinkedinSDK extends Component {
   }
 
   render() {
-    const { textButton, className, buttonType } = this.props
+    const { textButton, btnClassName, buttonType, icon } = this.props
     const { loading } = this.state
     return (
       <button
@@ -66,6 +67,7 @@ export class LinkedinSDK extends Component {
         className={className}
         disabled={loading}
       >
+        {icon}
         {textButton}
       </button>
     )
