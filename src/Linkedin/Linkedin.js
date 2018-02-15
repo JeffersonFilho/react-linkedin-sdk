@@ -58,7 +58,7 @@ export class LinkedinSDK extends Component {
   }
 
   render() {
-    const { textButton, btnClassName, buttonType, icon } = this.props
+    const { textButton, className, buttonType, icon } = this.props
     const { loading } = this.state
     return (
       <button
