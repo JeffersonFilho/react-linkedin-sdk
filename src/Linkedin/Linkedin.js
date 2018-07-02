@@ -45,6 +45,7 @@ export class LinkedinSDK extends Component {
   }
 
   callBack = () => {
+    this.setState({ loading: true })
     const { fields } = this.props
     window.IN.API.Raw(`/people/~${fields}`).result(r => {
       this.setState({ loading: false })
@@ -53,7 +54,6 @@ export class LinkedinSDK extends Component {
   }
 
   authorize = e => {
-    this.setState({ loading: true })
     window.IN.User.authorize(this.callBack, '')
   }
 
