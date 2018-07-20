@@ -1,1 +1,1 @@
-export default from './Linkedin'
+export from './Linkedin'

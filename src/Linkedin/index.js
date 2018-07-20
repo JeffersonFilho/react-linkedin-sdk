@@ -1,3 +1,7 @@
 import LinkedinSDK from './Linkedin'
+import LinkedinLogout from './LinkedinLogout'
 
-export default LinkedinSDK
+export {
+	LinkedinSDK,
+	LinkedinLogout
+}
