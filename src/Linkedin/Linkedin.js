@@ -27,6 +27,10 @@ export class LinkedinSDK extends Component {
   }
 
   componentDidMount() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    
     const { clientId } = this.props
     this.loadSDK(clientId)
   }
