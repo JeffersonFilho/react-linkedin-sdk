@@ -11,7 +11,8 @@ export class LinkedinSDK extends Component {
     loginButtonText: PropTypes.string,
     logoutButtonText: PropTypes.string,
     buttonType: PropTypes.string,
-    icon: PropTypes.object
+    icon: PropTypes.object,
+    getOAuthToken: PropTypes.bool,
   }
 
   state = {
@@ -23,7 +24,8 @@ export class LinkedinSDK extends Component {
     loginButtonText: 'Login with Linkedin',
     logoutButtonText: 'Logout from Linkedin',
     buttonType: 'button',
-    className: 'linkedin-sdk'
+    className: 'linkedin-sdk',
+    getOAuthToken: false,
   }
 
   componentDidMount() {
@@ -53,7 +55,7 @@ export class LinkedinSDK extends Component {
 
   callBack = () => {
     this.setState({ loading: true })
-    const { fields, callBack } = this.props
+    const { fields, callBack, getOAuthToken } = this.props
     const { isLoggedIn } = this.state
 
     if (window.IN['User'] && isLoggedIn) {
@@ -62,7 +64,9 @@ export class LinkedinSDK extends Component {
     }
     window.IN.API.Raw(`/people/~${fields}`).result(r => {
       this.setState({ loading: false, isLoggedIn: true })
-      callBack(r)
+      const response = { ...r }
+      if (getOAuthToken) response.oauthToken = window.IN.ENV.auth.oauth_token
+      callBack(response)
     })
   }
 

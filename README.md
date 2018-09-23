@@ -84,3 +84,4 @@ export default MyComponent
 | logoutButtonText |  string  | Logout from Linkedin |
 |    buttonType    |  string  |        button        |
 |       icon       |  string  |         none         |
+|   getOAuthToken  |   bool   |        false         |
