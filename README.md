@@ -33,6 +33,7 @@ ReactDOM.render(
     logoutButtonText={'Logout from Linkedin'}
     buttonType={'button'}
     icon={<Icon />}
+    getOAuthToken
   />,
   document.getElementById('demo')
 )
@@ -64,6 +65,7 @@ class MyComponent extends React.Component {
         logoutButtonText={'Logout from Linkedin'}
         buttonType={'button'}
         icon={<Icon />}
+        getOAuthToken
       />
     )
   }
@@ -84,4 +86,4 @@ export default MyComponent
 | logoutButtonText |  string  | Logout from Linkedin |
 |    buttonType    |  string  |        button        |
 |       icon       |  string  |         none         |
-|   getOAuthToken  |   bool   |        false         |
+|  getOAuthToken   |   bool   |        false         |
